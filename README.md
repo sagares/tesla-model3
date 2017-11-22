@@ -1,8 +1,10 @@
-# Node Todo App
+# Tesla Model 3
 
-A Node app built with MongoDB and Angular. For demonstration purposes and a tutorial.
+Tesla is introducing Model 3
 
-Node provides the RESTful API. Angular provides the frontend and accesses the API. MongoDB stores like a hoarder.
+A Node app built with Angular.
+
+Node provides the RESTful API. Angular provides the frontend and accesses the API.
 
 ## Requirements
 
