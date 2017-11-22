@@ -33,9 +33,11 @@
 		<!-- VIDEO -->
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
-				<video class="main-video" autoplay="" loop="" preload="metadata">
-        	<source data-src="video/homepage-video-summer-2017.mp4" media="(min-width: 640px)" src="video/homepage-video-summer-2017.mp4">
-
+				<video class="main-video" autoplay="" loop="" preload="metadata" controls>
+					<source data-src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808" media="(min-width: 640px)" src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808">
+					<source data-src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.m4v?20170808" media="(min-width: 640px)" src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.m4v?20170808">
+				  <source data-src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.ogv?20170808" media="(min-width: 640px)" src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.ogv?20170808">
+				  <source data-src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.webm?20170808" media="(min-width: 640px)" src="https://www.tesla.com/ns_videos/homepage-video-summer-2017.webm?20170808">
     		</video>
 				<h2 class="video-title">{{message}}<h2>
 			</div>
@@ -45,30 +47,36 @@
 			<div class="col-sm-12 col-md-12">
 				<p class="form-text">{{formText}}</p>
 			</div>
-			<form class="subscribe-form" ng-submit="subscribe()">
+			<form class="subscribe-form" name="userForm" ng-submit="subscribe(userForm.$valid)" novalidate>
 				<div class="col-sm-12 col-md-12">
 					<div class="form-group">
-    				<input type="email" class="form-control" id="email" placeholder="Email address">
+    				<input type="email" class="form-control" name="email" ng-model="user.email" placeholder="Email address" required>
+						<span ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</span>
   				</div>
 				</div>
-				<div class="col-sm-4 col-md-3">
+				<div class="col-xs-4 col-sm-4 col-md-3">
 					<div class="form-group">
-    				<input type="text" class="form-control" id="firstName" placeholder="First Name">
+    				<input type="text" class="form-control" name="firstName" ng-model="user.firstName" placeholder="First Name" required>
+						<span ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block">First name is required.</span>
   				</div>
 				</div>
-				<div class="col-sm-4 col-md-3">
+				<div class="col-xs-4 col-sm-4 col-md-3">
 					<div class="form-group">
-    				<input type="text" class="form-control" id="lastName" placeholder="Last Name">
+    				<input type="text" class="form-control" name="lastName" ng-model="user.lastName" placeholder="Last Name" required>
+						<span ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="help-block">Last name is required.</span>
   				</div>
 				</div>
-				<div class="col-sm-4 col-md-3">
-					<select class="form-control" ng-model="selectedCoutry" placeholder="Country">
+				<div class="col-xs-4 col-sm-4 col-md-3">
+					<select class="form-control select-country" name="country" ng-model="user.country" placeholder="Country" required>
 						<option value="">Country</option>
 						<option ng-repeat="country in countries">{{country}}</options>
 					</select>
+					<span ng-show="userForm.country.$invalid && !userForm.country.$pristine" class="help-block">Select a country.</span>
 				</div>
-				<div class="col-sm-12 col-md-3">
-					<input type="submit" class="btn btn-warning">Submit</button>
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<div class="form-group">
+						<input type="submit" class="btn btn-warning btn-100" ng-disabled="userForm.$invalid"></button>
+					</div>
 				</div>
 			</form>
 		</div>
