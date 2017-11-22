@@ -1,0 +1,77 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="teslaModel3App">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Tesla - Model3</title>
+
+	<!-- STYLES -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<!-- SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script><!-- load angular -->
+	<script src="js/app.js"></script> <!-- load our main application -->
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER -->
+		<div class="row centered-text">
+			<div class="col-md-12 col-sm-12">
+				<h1>Tesla</h1>
+			</div>
+		</div>
+
+		<!-- VIDEO -->
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<video class="main-video" autoplay="" loop="" preload="metadata">
+        	<source data-src="video/homepage-video-summer-2017.mp4" media="(min-width: 640px)" src="video/homepage-video-summer-2017.mp4">
+
+    		</video>
+				<h2 class="video-title">{{message}}<h2>
+			</div>
+		</div>
+
+		<div class="row main m-t-5">
+			<div class="col-sm-12 col-md-12">
+				<p class="form-text">{{formText}}</p>
+			</div>
+			<form class="subscribe-form" ng-submit="subscribe()">
+				<div class="col-sm-12 col-md-12">
+					<div class="form-group">
+    				<input type="email" class="form-control" id="email" placeholder="Email address">
+  				</div>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<div class="form-group">
+    				<input type="text" class="form-control" id="firstName" placeholder="First Name">
+  				</div>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<div class="form-group">
+    				<input type="text" class="form-control" id="lastName" placeholder="Last Name">
+  				</div>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<select class="form-control" ng-model="selectedCoutry" placeholder="Country">
+						<option value="">Country</option>
+						<option ng-repeat="country in countries">{{country}}</options>
+					</select>
+				</div>
+				<div class="col-sm-12 col-md-3">
+					<input type="submit" class="btn btn-warning">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

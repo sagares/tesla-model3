@@ -1,0 +1,16 @@
+{
+  "name": "tesla-model3",
+  "version": "0.0.1",
+  "description": "Tesla are launching a new electric car!",
+  "main": "server.js",
+  "author": "Santosh Sagare",
+  "license": "SEE LICENSE IN <filename>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sagares/tesla-model3.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.4"
+  }
+}
